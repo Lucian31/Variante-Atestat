@@ -1,0 +1,36 @@
+#Cerinta
+
+Se citeşte de la tastatură un număr natural n (10  n  10000). Să se descompună n în factori
+primi. Se vor afişa la ecran factorii şi puterile la care apar.
+Exemplu:
+n = 120
+Se va afişa:
+2 3
+3 1
+5 1
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+   int  n;
+   cin >> n;
+    int d = 2;
+    while(n > 1){
+        int p = 0;
+        while(n%d == 0){
+            p++;
+            n/=d;
+        }
+        cout << d << " "<<p<<endl;
+        if(d == 2) d+=1;
+        else
+            d+=2;
+    }
+    return 0;
+}
