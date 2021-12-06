@@ -1,0 +1,30 @@
+#Cerinta
+
+Se citeşte de la tastatură un număr natural n (10 < n < 1000000). Să se afişeze la ecran numărul
+numerelor naturale mai mici decât n şi prime cu n. Două numere sunt prime între ele dacă cmmdc
+al lor este 1. De exemplu, 12 are 4 numere prime cu 12 și mai mici decât 12. Acestea sunt: 1, 5, 7,
+11.
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+   int  n;
+   cin >> n;
+   for(int i = 1; i < n;i++){
+        int a = n, b = i;
+          while(b != 0){
+            int r = a%b;
+            a = b;
+            b = r;
+          }
+          if(a == 1) cout << i << " ";
+   }
+
+    return 0;
+}
