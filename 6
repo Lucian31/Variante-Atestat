@@ -1,0 +1,39 @@
+#Cerinta
+
+Se citesc de la tastatură două numere naturale nenule a şi b, unde a şi b sunt cuprinse între 1 şi
+2.000.000.000. Să se afişeze la ecran numitorul şi numărătorul fracţiei ireductibile a/b.
+Exemplu:
+a = 15 b = 12
+Se va afişa: 5 4
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+
+
+
+int main()
+{
+  int a, b;
+
+  cin >> a >> b;
+  int aa = 0, bb = 0;
+  aa = a;
+  bb = b;
+
+   while(b != 0){
+       int r = a%b;
+       a = b;
+       b = r;
+
+    }
+
+   aa/=a;
+   bb/=a;
+   cout << aa << " " << bb;
+
+    return 0;
+}
