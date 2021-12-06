@@ -1,0 +1,57 @@
+#Cerinta
+
+În fişierul nume.in se află câte unul pe linie un nume. În fişier sunt cel mult 100 de nume,
+fiecare de lungime maximă 20. Să se afişeze în fişierul nume.out numele ordonate alfabetic.
+Exemplu
+nume.in
+Popovici
+Albu
+Vasilache
+Dobrescu
+nume.out
+Albu
+Dobrescu
+Popovici
+Vasilache
+
+
+#Rezolvare
+
+#include <fstream>
+#include <cstring>
+
+
+using namespace std;
+
+ifstream in("nume.in");
+ofstream out("nume.out");
+
+int main()
+{
+    char s[100][21];
+    char ch[21];
+    int i = 0, ct = 0;
+    while(in >> ch){
+        strcpy(s[i++],ch);
+        ct++;
+    }
+
+
+
+    for(int j = 0 ; j <= ct; j++){
+        for(int k = j+1; k <= ct;k++){
+             if(strcmp(s[j],s[k]) > 0){
+                char aux[21];
+                strcpy(aux,s[i]);
+                strcpy(s[i], s[j]);
+                strcpy(s[j],aux);
+
+             }
+        }
+    }
+
+    for(int j = 0 ; j <=ct ; j++)
+        out << s[j] << endl;
+
+    return 0;
+}
