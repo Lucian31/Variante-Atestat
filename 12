@@ -1,0 +1,41 @@
+#Cerinta
+
+Fişierul date.in conţine pe prima linie un număr natural n (2  n  100), pe a doua linie n
+numere naturale x 1 x 2 ... x n cuprinse între 2 şi 1000, iar pe a treia linie un număr natural p care este
+prim. Să se determine şi să se afişeze la ecran numărul natural k maxim cu proprietatea că produsul
+x 1 *x 2 *...*x n este divizibil cu p k .
+Exemplu:
+date.in
+
+5
+512 12 999 23 888
+2
+Se va afişa: k = 14
+
+
+#Rezolvare
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int n,p;
+  cin >> n;
+  int s[n+1];
+  for(int i = 1; i <= n;i++)
+    cin >> s[i];
+ cin >> p;
+
+ int k = 0;
+
+    for(int i = 1; i <= n;i++){
+        while(s[i]%p == 0){
+            k++;
+            s[i]/=p;
+        }
+    }
+
+    cout << k;
+    return 0;
+}
