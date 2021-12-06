@@ -1,0 +1,45 @@
+#Cerinta 
+
+Se citesc de la tastatură două numere naturale a şi b, unde 1 &lt; a &lt; b &lt; 10000. Să se afişeze în
+fişierul palin.txt toate numerele palindrom din intervalul [a, b].
+Exemplu:
+a = 90, b = 130
+palin.txt
+99 101 111 121
+
+
+#Rezolvare
+
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("palin.in");
+ofstream fout("palin.out");
+
+bool  palindrom(int x){
+    int x2 = 0;
+    int xx = x;
+    while(x){
+        x2 = x%10 + x2*10;
+        x/=10;
+    }
+    return (x2 == xx);
+
+}
+
+int main()
+{
+    int a,b;
+    fin >> a >> b;
+
+
+    for(int i = a; i <= b; i++){
+        if(palindrom(i) == 1)
+            fout << i << " ";
+    }
+
+
+
+    return 0;
+}
