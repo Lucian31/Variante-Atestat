@@ -1,0 +1,50 @@
+#Cerinta
+
+Fișierul numere.in conține pe prima linie numerele naturale n și m. Pe linia a doua sunt n
+numere naturale ordonate crescător, iar pe linia a treia se află m numere naturale ordonate
+crescător. Să se memoreze cele două șiruri în doi vectori a și b, apoi să se interclaseze șirurile în
+vectorul c. Se va afișa apoi vectorul c în fișierul numere.out.
+Exemplu:
+numere.in
+3 4
+2 5 8
+1 2 2 6
+numere.out
+1 2 2 2 5 6 8
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int n,m;
+  cin >> n >> m;
+  int a[n+1], b[m+1], c[n+m+1];
+
+    for(int i = 1;i <= n ;i++)
+        cin >> a[i];
+
+    for(int i = 1;i <= m;i++)
+        cin >> b[i];
+
+       int i = 1, j = 1, k = 1;
+       while(i <= n && j <= m){
+        if(a[i] < b[j])
+            c[k++] = a[i++];
+            else
+                c[k++] = b[j++];
+
+       }
+
+       while(i <= n) c[k++] = a[i++];
+       while(j <= m) c[k++] = b[j++];
+
+       for(int p = 1; p < k;p++)
+        cout << c[p]<<" ";
+
+
+    return 0;
+}
