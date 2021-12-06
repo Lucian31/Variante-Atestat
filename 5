@@ -1,0 +1,47 @@
+#Cerinta
+
+Scrieţi un program care citeşte din fişierul cifre.in un număr natural nenul de maximum 1000 de
+cifre. Să se afişeze în cifre.out numărul maxim care se poate forma cu cifrele numărului.
+Exemplu:
+cifre.in
+1928192229
+cifre.out
+9998222211
+
+
+#Rezolvare
+
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("cifre.in");
+ofstream fout("cifre.out");
+
+
+int main()
+{
+  int n, s[1001] = {0}, i = 1, nrcifre = 0;
+  fin >> n;
+   while(n != 0){
+      s[i++] = n%10;
+      nrcifre++;
+      n/=10;
+
+   }
+
+   for(int i = 1; i < nrcifre; i++){
+    for(int j = i+1 ; j <=nrcifre;j++){
+        if(s[i] < s[j]){
+            int aux = s[i];
+            s[i] = s[j];
+            s[j] = aux;
+        }
+    }
+   }
+
+   for(int i = 1; i <= nrcifre ; i++)
+    fout << s[i];
+
+    return 0;
+}
