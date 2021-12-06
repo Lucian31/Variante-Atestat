@@ -1,0 +1,43 @@
+#Cerinta
+
+În fişierul numere.in se află pe prima linie un număr natural n (1 &lt; n &lt; 1.000.000), iar pe a
+doua linie n naturale de cel mult 2 cifre fiecare. Să se determine şi să se afişeze la ecran numărul
+care se repetă cel mai des. Dacă sunt mai multe numere care se repetă cel mai des, se va afişa
+numai unul dintre ele.
+Exemplu:
+numere.in
+10
+5 3 17 6 3 1 3 6 1 3
+Se va afişa: Numărul care apare cel mai des este 3
+
+
+
+#Rezolvare
+
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int s[n+1], fr[n+1];
+    for(int i = 1;i <= n; i++){
+        cin >> s[i];
+        fr[s[i]]++;
+        }
+
+   int maxx = 0;
+    for(int i = 1;i <= n; i++){
+                if(fr[s[i]] > maxx)
+                 maxx = i;
+
+    }
+
+    cout << s[maxx];
+
+
+    return 0;
+}
