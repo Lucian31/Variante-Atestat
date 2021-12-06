@@ -1,0 +1,45 @@
+#Cerinta
+
+
+Se citeşte de la tastatură un număr natural nenul n (10  n  1.000.000). Să se verifice dacă n
+poate fi scris ca produs de exact două numere prime. Se va afișa la ecran DA sau NU.
+Exemplu:
+n = 35
+Se va afişa: DA (35=5*7)
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+ int n, nr = 0;
+ cin >> n;
+ int d = 2, nn = n;
+    while(n > 1){
+        int p = 0;
+        while(n%d == 0){
+            p++;
+            n/=d;
+        }
+        if(p == 1) {nr = d; break;}
+        if(d == 2) d++;
+        else
+            d+=2;
+
+
+
+    }
+    if(nr == 0) cout << "NU";
+    else
+        cout<<"DA";
+    //nn/=nr;
+    // cout << nr << " " << nn;
+
+
+    return 0;
+}
+
