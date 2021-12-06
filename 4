@@ -1,0 +1,37 @@
+#Cerinta
+
+Fişierul numere.in conţine mai multe numere naturale cuprinse între 1 şi 1.000.000 şi care se
+termină cu 0 (zero) care nu face parte din şir. Să se afişeze în fişierul numere.out cifra maximă
+pentru fiecare număr din şir.
+Exemplu:
+numere.in
+200 4563 5 457736 1996 100972 0
+numere.out
+2 6 5 7 9 9
+
+#Rezolvare
+
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("numere.in");
+ofstream fout("numere.out");
+
+
+int main()
+{
+    int n,  maxi;
+    while(fin >> n && n != 0){
+        maxi = 0;
+        while(n){
+            if(n%10 > maxi)
+                maxi = n%10;
+            n/=10;
+        }
+        fout << maxi << " ";
+    }
+
+
+    return 0;
+}
