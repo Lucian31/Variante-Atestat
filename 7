@@ -1,0 +1,41 @@
+#Cerinta
+
+Se citește de la tastatură un șir de cel mult 255 caractere format doar din litere mici. Să se
+afișeze la ecran prima literă care apare o singură dată în șir. Dacă nu există o astfel de literă se va
+afișa mesajul NU EXISTA.
+Exemplu:
+ddemneaedn => se va afișa litera m
+
+#Rezolvare
+
+#include <iostream>
+
+
+using namespace std;
+
+
+
+
+int main()
+{
+   char ch[256];
+    cin >> ch;
+
+    for(int i = 1; ch[i] != NULL ;i++){
+         bool flag = 0;
+        for(int j = i+1; ch[j] != NULL;j++){
+            if(ch[i] == ch[j]){
+                 flag = 1;
+                break;
+            }
+        }
+        if(flag == 0) {
+            cout << ch[i];
+            break;
+        }
+    }
+
+    return 0;
+}
+
+
