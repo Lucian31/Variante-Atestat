@@ -1,0 +1,61 @@
+#Cerinta
+
+Fişierul numere.in conţine pe prima linie numărul natural n (2  n  25000), pe a doua linie un
+şir de n numere naturale cuprinse între 1 şi 1000, iar pe a treia linie un număr natural x cuprins
+între 1 şi 1000. Să se memoreze şirul într-un vector şi apoi să se elimine din acest vector toate
+elementele egale cu x. Vectorul rezultat va fi afişat în fişierul numere.out.
+Exemplu:
+numere.in
+7
+5 3 3 999 3 67 24
+3
+numere.out
+5 999 67 24
+
+
+#Rezolvare
+
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+ifstream in("numere.in");
+ofstream out("numere.out");
+
+int main ()
+{
+  int n, x;
+  in >> n;
+
+  int a[n + 1];
+
+  for (int i = 1; i <= n; i++)
+    in >> a[i];
+
+
+  in >> x;
+
+  for (int i = 1; i <= n; i++)
+    {
+      while (a[i] == x)
+	{
+
+
+	  for (int j = i; j <= n; j++)
+	    a[j] = a[j + 1];
+
+	  n--;
+
+
+	}
+    }
+
+
+    for (int i = 1; i <= n; i++)   out << a[i] << " ";
+    
+  return 0;
+}
+
+
+
