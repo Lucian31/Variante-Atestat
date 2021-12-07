@@ -1,0 +1,37 @@
+#Cerinta
+
+Se citeşte din fişierul text.in un şir de caractere format numai din litere mici. Să se afişeze la
+ecran numărul de vocale din text.
+Exemplu:
+text.in
+abcdeusdfoa
+Se va afişa: Numărul de vocale din text este 5
+
+
+
+#Rezolvare
+
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+ifstream in("text.in");
+ofstream out("text.out");
+int main()
+{
+    char ch[21];
+    int nrvoc = 0;
+    in >> ch;
+    int l = strlen(ch);
+    for(int i = 0; i < l; i++){
+
+        if(ch[i] == 'a' || ch[i] == 'e' || ch[i] == 'i' || ch[i] == 'o' || ch[i] == 'u' ) nrvoc++;
+    }
+    
+   out << nrvoc;
+
+    return 0;
+}
+
+
