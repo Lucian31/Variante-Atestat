@@ -1,0 +1,36 @@
+#Cerinta
+
+Scrieţi un program care citeşte de la tastatură un număr natural n (n&lt;=30), construieşte în
+memorie şi afişează pe ecran, matricea cu n linii şi n coloane, în care se vor memora în ordinea
+strict crescătoare a valorii, pe linii şi coloane, primele n 2 numere naturale nenule pare.
+Exemplu: dacă n=4 se afişează:
+2 4 6 8
+10 12 14 16
+18 20 22 24
+26 28 30 32
+
+
+#Rezolvare
+
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+   
+    int  n;
+    cin >> n;
+    int nr = 2;
+    for(int i = 1; i <= n; i++, cout<<endl)
+     for(int i = 1; i <= n ;i++, cout<<" "){
+         cout << nr << " ";
+         nr+=2;
+         
+     }
+    
+
+    
+  return 0;
+}
