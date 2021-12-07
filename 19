@@ -1,0 +1,51 @@
+#Cerinta
+  
+  Scrieţi un program care citeşte de la tastatură o frază de maximum 255 de caractere (litere mici
+ale alfabetului englez şi spaţii), ale cărei cuvinte sunt despărţite prin unul sau mai multe spații şi
+afişează pe primul rând al ecranului numărul total al cuvintelor din frază.
+Exemplu
+ana are mere
+Se va afișa 3.
+
+  
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+
+int main ()
+{
+   char c[256];
+   cin.getline(c,256);
+   
+   int l = strlen(c), ct = 0;
+   bool passed = 0;
+   for(int i = 0;i < l; i++){
+       if(c[i] != ' ' &&  (c[i-1] == ' ' || c[i+1] == ' ')) 
+       {
+           if(passed == 0){
+               cout << c[i] ;
+           ct++;
+           cout<<endl;
+           passed = 1;
+               
+           }
+           else{
+               passed = 0;
+               
+           }
+           }
+           
+       }
+    
+       
+    cout << ct+1;//afisam nr de spatii + 1
+   
+    
+  return 0;
+}
+  
+  
