@@ -1,0 +1,35 @@
+#Cerinta
+
+Se citeşte din fişierul cuvant.in un şir de caractere format din litere mari şi mici. Să se verifice
+dacă şirul citit este sau nu palindrom. Se va afişa la ecran cuvântul DA sau NU după cum şirul este
+sau nu este palindrom.
+Exemplu:
+cuvant.in
+capac
+Se va afişa: DA
+
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main ()
+{
+   char ch[21];
+   cin >> ch;
+   int l = strlen(ch), ll = 0;
+   while(ll <= l/2){
+       if(ch[ll] != ch[l-ll-1]){
+           cout << "NU";
+           return 0;
+       }
+       ll++;
+   }
+   cout << "DA";
+   
+    
+  return 0;
+}
