@@ -1,0 +1,38 @@
+#Cerinta
+
+Fişierul matrice.in conţine pe prima linie un număr natural n (3  n  50) reprezentând
+numărul de linii şi coloane ale unei matrice pătratice, iar pe următoarele n linii este dată matricea.
+Să se calculeze şi să se afişeze la ecran suma elementelor de sub diagonala secundară a matricei.
+Exemplu:
+matrice.in
+4
+1 2 3 4
+2 3 4 5
+3 4 5 6
+7 8 9 1
+Se va afişa: 34
+
+
+#Rezolvare
+
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+  int n, s = 0;
+  cin >> n;
+  int a[n+1][n+1];
+  for(int i = 1; i <= n; i++){
+    for(int j = 1; j <= n ;j++){
+         cin >> a[i][j];
+         if(i+j >  n+1) s+=a[i][j];
+    }
+  }
+  
+  cout << s;
+    
+  return 0;
+}
