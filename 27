@@ -1,0 +1,41 @@
+#Cerinta
+
+Un şir cu maximum 255 de caractere conţine cuvinte separate prin câte un spaţiu. Cuvintele
+sunt formate numai din litere mici ale alfabetului englez. Scrieţi un program care citeşte de la
+tastatură un astfel de şir S şi construiește un nou șir T care memorează cuvintele în ordine inversă.
+Se va afișa apoi T la ecran.
+Exemplu: S=ana are mere. Atunci T=mere are ana
+
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+   char s[256];
+   cin.getline(s,256);
+
+   char v[256][256];
+   int k = 0;
+
+   char *p = strtok(s," ");
+   while(p != NULL){
+         strcpy(v[k++],p);
+         p = strtok(NULL, " ");
+
+   }
+
+   for(int i = k-1 ; i >=0 ; i--)
+    cout << v[i] << " ";
+
+
+
+
+    return 0;
+}
+
+
