@@ -17,9 +17,9 @@ Vasilache
 
 #Rezolvare
 
+
 #include <fstream>
 #include <cstring>
-
 
 using namespace std;
 
@@ -28,30 +28,28 @@ ofstream out("nume.out");
 
 int main()
 {
-    char s[100][21];
-    char ch[21];
-    int i = 0, ct = 0;
-    while(in >> ch){
-        strcpy(s[i++],ch);
-        ct++;
-    }
+     char s[100][21];
+     char ch[21];
+     int i = 0;
+     while(in >> ch){
+        strcpy(s[i],ch);
+        i++;
+     }
 
 
+      for(int j = 'A' ; j < 'Z' ; j++){
+            for(int k = 0 ; k < i ; k ++){
 
-    for(int j = 0 ; j <= ct; j++){
-        for(int k = j+1; k <= ct;k++){
-             if(strcmp(s[j],s[k]) > 0){
-                char aux[21];
-                strcpy(aux,s[i]);
-                strcpy(s[i], s[j]);
-                strcpy(s[j],aux);
+            if(s[k][0] == j){
+                out << s[k]<<endl;
+                break;
+            }       
 
-             }
         }
-    }
+        }
 
-    for(int j = 0 ; j <=ct ; j++)
-        out << s[j] << endl;
+
 
     return 0;
 }
+
