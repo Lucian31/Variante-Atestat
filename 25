@@ -1,0 +1,35 @@
+#Cerinta
+
+Un şir cu maximum 255 de caractere conţine cuvinte separate prin unul sau mai multe spaţii.
+Cuvintele sunt formate numai din litere mici ale alfabetului englez. Scrieţi un program care citeşte
+un astfel de şir de la tastatură şi îl afişează modificat, prima şi ultima literă a fiecărui cuvânt fiind
+afişată ca literă mare.
+Exemplu: ana are mere =&gt; AnA ArE MerE
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[256];
+    cin.getline(s,256);
+
+    int l = strlen(s);
+    if(s[0] != ' ' && s[0] >= 'a' && s[0] <= 'z') s[0] -= 32;
+
+   for(int i = 0; i < l ;i++){
+        if((s[i-1] == ' ' && s[i] >= 'a' && s[i] <= 'z' ) || ( s[i+1] == ' ' && s[i] >= 'a' && s[i] <= 'z') || (s[i+1] == NULL && s[i] >= 'a' && s[i] <= 'z' ))
+            s[i] -= 32;
+    }
+
+    cout << s;
+
+
+    return 0;
+}
+
+
