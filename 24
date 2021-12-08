@@ -1,0 +1,76 @@
+#Cerinta
+
+Fişierul şiruri.in conţine pe prima linie două numere naturale m şi n (1  m, n  1000), pe a
+doua linie un şir de m numere întregi x 1 x 2 ... x m , iar pe a treia linie n numere întregi y 1 y 2 ... y n . Cele
+două şiruri sunt ordonate crescător. Se cere să se interclaseze cele două şiruri astfel încât șirul
+rezultat să conțină valorile distincte din cele două șiruri. Rezultatul se va scrie în fişierul
+siruri.out.
+Exemplu
+siruri.in
+4 5
+4 5 7 12
+1 5 5 6 6
+siruri.out
+1 4 5 6 7 12
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    int a[n+1], b[m+1], c[n+m+1];
+
+    for(int i = 1; i <= n; i++) cin >> a[i];
+    for(int i = 1; i <= m ;i++) cin >> b[i];
+
+    int k = 0;
+    bool checked;
+    for(int i = 1; i <= n; i++){
+            checked = 0;
+        for(int j = 0; j <= k ;j++){
+            if(a[i] == c[j]){
+                checked = 1;
+                break;
+            }
+
+        }
+        if(checked  == 0)
+                 c[k++] = a[i];
+    }
+
+    for(int i = 1; i <= m; i++){
+            checked = 0;
+        for(int j = 1; j <= k ;j++){
+            if(b[i] == c[j]){
+                checked = 1;
+                break;
+            }
+
+        }
+        if(checked  == 0)
+                 c[k++] = b[i];
+    }
+
+    for(int i = 0; i < k ; i++){
+            for(int j = i+1; j < k ;j++){
+                if(c[i] > c[j]){
+                    int aux = c[i];
+                    c[i] = c[j];
+                    c[j] = aux;
+                 }
+            }
+
+    }
+   for(int i = 0; i < k ;i++){
+        cout << c[i] << " ";
+    }
+
+
+
+    return 0;
+}
