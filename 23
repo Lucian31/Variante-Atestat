@@ -1,0 +1,39 @@
+#Cerinta
+
+Se consideră o matrice cu n linii şi m coloane (n&lt;30, m&lt;30), ce memorează numere întregi de
+cel mult 4 cifre fiecare. Scrieţi un program care citeşte de la tastatură valorile n, m şi elementele
+matricei şi care afişează pe ecran, separate prin câte un spaţiu, valorile minime de pe fiecare
+coloană, în ordine de la prima la ultima coloană.
+Exemplu:
+3 4
+2 7 9 4
+1 8 2 3
+4 9 5 2
+Se va afișa: 1 7 2 2
+
+#Rezolvare
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    int a[n+1][m+1];
+    for(int i = 1; i <=n ; i++)
+        for(int j = 1 ; j <= m; j++)
+                cin >> a[i][j];
+
+            for(int j = 1; j <= m ; j++){
+                int minn = 10000001;
+              for(int i = 1 ; i <= n; i++){
+                  if(a[i][j] < minn) minn  = a[i][j];
+              }
+              cout << minn << " ";
+              }
+
+
+    return 0;
+}
