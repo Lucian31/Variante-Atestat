@@ -1,0 +1,40 @@
+#Cerinta
+
+Scrieţi un program care citeşte de la tastatură un număr natural n (0&lt;n≤23) şi apoi construieşte
+în memorie o matrice cu n linii şi n coloane astfel încât elementele situate pe diagonala principală
+sa fie egale cu 2, cele situate deasupra diagonalei principale să fie egale cu 1, iar cele situate sub
+diagonala principală să fie egale cu 3.
+
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+   int n;
+
+   cin >> n;
+
+   int a[n+1][n+1];
+
+   for(int i = 1; i <= n ;i++){
+    for(int j = 1 ; j <= n; j++){
+        if(i > j) a[i][j] = 3;
+        if(i < j) a[i][j] = 1;
+        if(i == j) a[i][j] = 2;
+    }
+   }
+
+   for(int i = 1; i <= n ; i++,cout<<endl)
+    for(int j = 1; j <= n ; j++,cout << " ")
+        cout << a[i][j];
+
+
+
+
+    return 0;
+}
