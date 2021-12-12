@@ -1,0 +1,40 @@
+#Cerinta
+
+
+Scrieţi programul care citeşte de la tastatură un cuvânt C format din cel mult 30 de caractere,
+litere mici ale alfabetului englez, şi afişează pe ecran, fiecare pe câte o linie, toate prefixele
+acestuia, în ordine crescătoare a lungimilor.
+Exemplu: C=zefir. Se va afișa:
+z
+ze
+zef
+zefi
+zefir
+
+
+#Rezolvare
+
+
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+
+int main()
+{
+    char s[31];
+    cin >> s;
+
+    int ct = 1;
+    int l = strlen(s);
+    while(ct <= l){
+        for(int i = 0; i < ct ; i++)
+            cout << s[i];
+
+        ct++;
+        cout << endl;
+    }
+
+    return 0;
+}
