@@ -1,0 +1,43 @@
+#Cerinta
+
+Un cuvânt s, de cel mult 250 caractere, format doar din litere mici, conţine cel puţin o
+consoană. Scrieţi programul care citeşte de la tastatură cuvântul s, construieşte în memorie şi
+afişează pe ecran cuvântul obţinut prin eliminarea tuturor vocalelor din cuvântul s. Vocală este
+oricare literă care se află în mulţimea {a, e, i, o, u}.
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+
+
+using namespace std;
+
+int main()
+{
+
+   char s[256];
+   cin >> s;
+
+    int l = strlen(s);
+
+    for(int i = 0; i <= l; i++){
+        while(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' ){
+            char t[256];
+                strcpy(t,s+i+1);
+               strcpy(s+i,t);
+
+             }
+             l--;
+    }
+
+    cout << s;
+
+
+
+
+    return 0;
+}
+
+
