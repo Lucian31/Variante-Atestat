@@ -1,0 +1,38 @@
+#Cerinta
+
+Se citeşte de la tastatură un şir de cel mult 40 de caractere, format doar din litere mici. Să se
+afişeze pe ecran toate şirurile obţinute prin eliminarea succesivă a câte unei singure litere din şirul
+citit, ca în exemplu. Şirurile obţinute se vor afişa câte unul pe câte o linie a ecranului.
+Exemplu: dacă se citeşte şirul abbc atunci pe ecran se va afişa:
+bbc
+abc
+abc
+abb
+
+#Rezolvare
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+   char ch[40];
+   cin >> ch;
+
+   int l = strlen(ch);
+   int ct = 0;
+   while(ct != l){
+    for(int i = 0 ; i < l; i++){
+        if(ct != i) cout << ch[i];
+    }
+    ct++;
+    cout << endl;
+
+  }
+
+
+
+    return 0;
+}
