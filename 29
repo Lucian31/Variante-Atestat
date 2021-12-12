@@ -22,3 +22,52 @@ Se va afişa: NU
 
 #Rezolvare
 
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    int a[n+1], b[m+1];
+
+    for(int i = 1; i <= n ;i++) cin >> a[i];
+    for(int i = 1; i <= m ;i++) cin >> b[i];
+
+
+       int ct = 0, ex = 0;
+      for(int i = 1; i <= m ; i++){
+        for(int j = 1; j <= n ; j++){
+            if(b[i] == a[j] && i <= j ){
+                    if(ex > j){
+                            bool flag = 0;
+                        for(int k = j+1; k <= n; k++){
+                            if(b[k] ==  a[i]) flag = 1;
+                        }
+                    if(flag == 1){
+                        ct++;
+                        ex = j;
+                        break;
+                    }
+                    }
+                    else{
+                         ct++;
+                        ex = j;
+                        break;
+                    }
+
+
+            }
+        }
+
+      }
+      if(ct == m) cout << "DA" ;
+      else
+        cout << "NU";
+
+
+    return 0;
+}
