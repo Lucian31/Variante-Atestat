@@ -1,0 +1,40 @@
+#Cerinta
+
+Se citeşte de la tastatură un număr natural n (1 &lt; n &lt; 1.000.000). Se cere să se scrie n ca sumă
+de puteri ale lui 2. Se vor afişa la ecran exponenţii din descompunere.
+Exemplu:
+n = 100
+Se va afişa: 6 5 2 (pentru că 100 = 2 6 + 2 5 + 2 2 )
+
+
+#Rezolvare
+
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+int main()
+{
+
+   int n, x, p ,s = 0;
+   cin >> n;
+
+     while(n > 1){
+             x = 0;
+  for(int i = 2; i <= n; i*=2){
+              x++;
+  }
+       cout << x << " ";
+       p = pow(2,x);
+       cout << p << endl;
+       n-=p;
+
+
+
+  }
+
+
+    return 0;
+}
