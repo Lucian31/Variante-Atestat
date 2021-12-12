@@ -1,0 +1,36 @@
+#Cerinta
+
+Se citeşte de la tastatură un număr natural k (1  k  1.000.000.000). Scrieţi un program care
+verifică dacă n este termen al şirului Fibonacci (acest şir se construieşte prin recurenţa: f 1 =1, f 2 =1,
+f n =f n-1 +f n-2 , pentru n&gt;2). Se va afişa la ecran un mesaj.
+Exemplu:
+k = 13
+Se va afişa: 13 este termen al sirului Fibonacci
+
+#Rezolvare
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int n,t1,t2;
+   cin >> n;
+   t1=t2=1;
+   bool flag = 0;
+   while(t1+t2 <= n){
+    int aux = t1+t2;
+    t1 = t2;
+    t2 = aux;
+    if(t2 == n){flag = 1;break;}
+
+   }
+   if(flag == 1) cout << n << " este termen al sirului lui Fibonacci";
+   else
+    cout << n << " nu este termen al sirului lui Fibonacci";
+
+
+    return 0;
+}
