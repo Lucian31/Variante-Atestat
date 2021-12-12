@@ -1,0 +1,49 @@
+#Cerinta
+
+Se citește de la tastatură un număr natural n de cel mult 9 cifre. Să se construiască în memorie
+o matrice cu m linii și m coloane, unde m este numărul cifrelor lui n. Pe prima coloană se va
+memora cifra unităților lui n, pe a doua coloană cifra zecilor lui n ș.a.m.d.
+Exemplu: n=1430
+0 3 4 1
+0 3 4 1
+0 3 4 1
+0 3 4 1
+
+
+#Rezolvare
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int nn = n, l = 0;
+    while(nn)
+    {
+        l++;
+        nn/=10;
+    }
+    int a[l+1][l+1];
+    for(int j = 1 ; j <= l ; j++)
+    {
+        int x = n%10;
+        for(int i = 1; i <= l; i++)
+        {
+            a[i][j] = x;
+        }
+        n/=10;
+    }
+
+    for(int i = 1; i <= l; i++,cout << endl)
+        for(int j = 1; j <= l; j++,cout<<" ")
+            cout << a[i][j];
+
+
+
+
+    return 0;
+}
