@@ -13,18 +13,21 @@ Se va afişa: 3 29 (se elimină 3 și restul elementelor au suma 29)
 
 #Rezolvare
 
-
-#include <iostream>
+#include<iostream>
+#include <fstream>
 
 using namespace std;
+
+ifstream fin("numere.in");
+
 
 int main()
 {
     int n;
-    cin >> n;
+    fin >> n;
     int a[n+1];
 
-    for(int i = 1; i <= n ;i++) cin >> a[i];
+    for(int i = 1; i <= n ;i++) fin >> a[i];
 
     int s,smin,x,last;
      smin = 1000000001;
